@@ -1,0 +1,13 @@
+<div style="background-color:pink";>
+<h3>FILL THE FORM</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input  type="submit">
+    <button type="button" class="btn btn-secondary"><a href="{% url 'index' %}">Logout</a></button>
+</form>
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor %}
+<h3><a href="{% url 'index' %}">GO BACK</a></h3>
+</div>
